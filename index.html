@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M. Mohtasin Akbar Labib | CS Student & Networking Enthusiastic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scanline overlay -->
+  <div class="scanlines" aria-hidden="true"></div>
+  <!-- Matrix rain canvas -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">&gt; MAVERICK_</div>
+    <ul class="nav-links">
+      <li><a href="#about">./about</a></li>
+      <li><a href="#skills">./skills</a></li>
+      <li><a href="#projects">./projects</a></li>
+      <li><a href="#contact">./contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <span class="t-btn t-red"></span>
+          <span class="t-btn t-yellow"></span>
+          <span class="t-btn t-green"></span>
+          <span class="t-title">bash — ~/portfolio</span>
+        </div>
+        <div class="terminal-body">
+          <p class="t-line"><span class="t-prompt">root@maverick:~$</span> <span class="typed" id="typed-text"></span><span class="cursor">▋</span></p>
+          <div id="terminal-output" class="t-output"></div>
+        </div>
+      </div>
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, World. I'm</p>
+        <h1 class="hero-name">M. Mohtasin<br><span class="accent">Akbar Labib</span></h1>
+        <p class="hero-role"><span class="role-bracket">[</span> CS Student &amp; Networking Enthusiastic <span class="role-bracket">]</span></p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>scroll down</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 01</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar-wrap">
+          <div class="avatar-hex">
+            <div class="avatar-initials">MAL</div>
+          </div>
+          <div class="avatar-glow" aria-hidden="true"></div>
+          <div class="status-badge">
+            <span class="status-dot"></span> Available for opportunities
+          </div>
+        </div>
+        <div class="about-text">
+          <p>I'm a passionate <span class="hl">Cybersecurity &amp; Network Engineering</span> student at <span class="hl">North South University, Dhaka</span>, with a relentless curiosity for how systems break — and how to make them unbreakable.</p>
+          <p>My work lives at the intersection of defensive security, network architecture, and low-level systems. I believe the best security engineers think like attackers, so I spend time on CTFs, pentesting labs, and reverse engineering challenges.</p>
+          <p>When I'm not hardening networks or hunting vulnerabilities, I'm diving deep into <span class="hl">linear algebra, discrete mathematics</span>, and the theory that makes modern cryptography possible.</p>
+          <div class="club-badge">
+            <span class="club-icon">⬡</span>
+            <div>
+              <span class="club-title">NSU Computer &amp; Engineering Club</span>
+              <span class="club-role">General Member · NSUCEC</span>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num">10+</span>
+              <span class="stat-label">CTF Challenges</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">3+</span>
+              <span class="stat-label">Years Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 02</span>
+        <h2 class="section-title">Skills</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-card-icon">🛡️</div>
+          <h3>Cybersecurity</h3>
+          <ul>
+            <li>Penetration Testing</li>
+            <li>Vulnerability Assessment</li>
+            <li>OSINT &amp; Recon</li>
+            <li>CTF &amp; Exploit Dev</li>
+            <li>Malware Analysis</li>
+          </ul>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item">
+              <span>Pentesting</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Forensics</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon">🌐</div>
+          <h3>Networking</h3>
+          <ul>
+            <li>TCP/IP, OSI Model</li>
+            <li>Cisco Routing &amp; Switching</li>
+            <li>Firewall &amp; IDS/IPS</li>
+            <li>VPN &amp; Tunneling</li>
+            <li>Wireshark &amp; tcpdump</li>
+          </ul>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item">
+              <span>Network Design</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Packet Analysis</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon">💻</div>
+          <h3>Programming</h3>
+          <ul>
+            <li>C / C++</li>
+            <li>Python (Scripting)</li>
+            <li>Java (Learning)</li>
+            <li>Bash / Shell</li>
+            <li>SQL Basics</li>
+          </ul>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item">
+              <span>C / Python</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Scripting</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon">🔧</div>
+          <h3>Tools &amp; OS</h3>
+          <ul>
+            <li>Kali Linux / Parrot OS</li>
+            <li>Nmap, Metasploit</li>
+            <li>Burp Suite</li>
+            <li>Nessus / OpenVAS</li>
+            <li>Git &amp; VS Code</li>
+          </ul>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item">
+              <span>Linux</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Security Tools</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 03</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-num">01</span>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub">&#60;/&#62;</a>
+              <a href="#" class="proj-link" title="Live">↗</a>
+            </div>
+          </div>
+          <h3>Network Intrusion Detection System</h3>
+          <p>A Python-based IDS that monitors network traffic in real-time, flags anomalies using rule-based detection, and logs suspicious activity with detailed reports.</p>
+          <div class="project-tags">
+            <span>Python</span><span>Scapy</span><span>IDS</span><span>Networking</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-num">02</span>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub">&#60;/&#62;</a>
+              <a href="#" class="proj-link" title="Live">↗</a>
+            </div>
+          </div>
+          <h3>Port Scanner &amp; Vulnerability Mapper</h3>
+          <p>A fast multi-threaded port scanner built in C that fingerprints services, maps open ports, and cross-references known CVEs from a local database.</p>
+          <div class="project-tags">
+            <span>C</span><span>Sockets</span><span>CVE</span><span>Pentesting</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-num">03</span>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub">&#60;/&#62;</a>
+              <a href="#" class="proj-link" title="Live">↗</a>
+            </div>
+          </div>
+          <h3>Encrypted Chat Application</h3>
+          <p>End-to-end encrypted messaging app using RSA key exchange and AES-256 for message encryption, with a socket-based server-client architecture.</p>
+          <div class="project-tags">
+            <span>Python</span><span>RSA</span><span>AES</span><span>Sockets</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-num">04</span>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub">&#60;/&#62;</a>
+              <a href="#" class="proj-link" title="Live">↗</a>
+            </div>
+          </div>
+          <h3>Firewall Rule Automation Script</h3>
+          <p>A Bash script that automates iptables/nftables firewall rule deployment based on a YAML config, with rollback support and rule conflict detection.</p>
+          <div class="project-tags">
+            <span>Bash</span><span>iptables</span><span>Linux</span><span>Automation</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 04</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <p class="contact-intro">Let's connect. Whether it's a project, opportunity, or just a chat about cybersecurity — my terminal is always open.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <span class="c-icon">✉</span>
+              <div>
+                <span class="c-label">Email</span>
+                <a href="mailto:labib@example.com" class="c-val">labib@example.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="c-icon">⌥</span>
+              <div>
+                <span class="c-label">GitHub</span>
+                <a href="https://github.com/" target="_blank" class="c-val">www.github.com/mohtasinAkbar</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="c-icon">in</span>
+              <div>
+                <span class="c-label">LinkedIn</span>
+                <a href="https://linkedin.com/" target="_blank" class="c-val">www.linkedin.com/in/mohtasin-labib-a03b25349</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="c-icon">fb</span>
+              <div>
+                <span class="c-label">Facebook</span>
+                <a href="https://facebook.com/" target="_blank" class="c-val">www.facebook.com/mohtasin.labib</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Hey Labib, I wanted to talk about..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message ↗</button>
+          <p id="form-status" class="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed &amp; Built by <span class="accent">M. Mohtasin Akbar Labib</span></p>
+    <p class="footer-sub">root@portfolio:~$ <span class="blink">▋</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
