@@ -1,0 +1,167 @@
+/* ===== MATRIX RAIN ===== */
+const canvas = document.getElementById('matrix-canvas');
+const ctx = canvas.getContext('2d');
+let cols, drops;
+
+function initMatrix() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const fontSize = 14;
+  cols = Math.floor(canvas.width / fontSize);
+  drops = Array(cols).fill(1);
+}
+
+function drawMatrix() {
+  ctx.fillStyle = 'rgba(10,12,15,0.05)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00ff88';
+  ctx.font = '14px Share Tech Mono';
+
+  const chars = '01アイウエオカキクケコセキュリティネットワーク';
+
+  drops.forEach((y, i) => {
+    const char = chars[Math.floor(Math.random() * chars.length)];
+    ctx.fillText(char, i * 14, y * 14);
+    if (y * 14 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+    drops[i]++;
+  });
+}
+
+initMatrix();
+setInterval(drawMatrix, 50);
+window.addEventListener('resize', initMatrix);
+
+/* ===== TYPED TERMINAL ===== */
+const lines = [
+  { text: 'whoami', delay: 400 },
+  { output: '<span class="t-green-txt">m_mohtasin_akbar_labib</span>', delay: 300 },
+  { text: 'cat skills.txt', delay: 600 },
+  { output: '<span class="t-green-txt">cybersecurity | networking | pentesting | C | Python</span>', delay: 300 },
+  { text: 'echo $STATUS', delay: 600 },
+  { output: '<span class="t-success">✔ ready_to_defend_networks</span>', delay: 200 },
+];
+
+let lineIndex = 0;
+let charIndex = 0;
+const typedEl = document.getElementById('typed-text');
+const outputEl = document.getElementById('terminal-output');
+
+function typeNextLine() {
+  if (lineIndex >= lines.length) {
+    setTimeout(() => {
+      lineIndex = 0; charIndex = 0;
+      typedEl.textContent = '';
+      outputEl.innerHTML = '';
+      typeNextLine();
+    }, 3000);
+    return;
+  }
+
+  const line = lines[lineIndex];
+
+  if (line.output) {
+    const p = document.createElement('p');
+    p.innerHTML = line.output;
+    outputEl.appendChild(p);
+    lineIndex++;
+    setTimeout(typeNextLine, line.delay);
+    return;
+  }
+
+  if (charIndex < line.text.length) {
+    typedEl.textContent += line.text[charIndex];
+    charIndex++;
+    setTimeout(typeNextLine, 65);
+  } else {
+    const p = document.createElement('p');
+    p.innerHTML = '<span class="t-prompt">root@labib:~$</span> ' + line.text;
+    outputEl.appendChild(p);
+    typedEl.textContent = '';
+    charIndex = 0;
+    lineIndex++;
+    setTimeout(typeNextLine, line.delay);
+  }
+}
+
+setTimeout(typeNextLine, 800);
+
+/* ===== NAVBAR SCROLL ===== */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+/* ===== HAMBURGER ===== */
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+/* ===== SKILL BAR ANIMATION (IntersectionObserver) ===== */
+const skillFills = document.querySelectorAll('.skill-fill');
+
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, { threshold: 0.3 });
+
+skillFills.forEach(fill => skillObserver.observe(fill));
+
+/* ===== SECTION FADE-IN ===== */
+const fadeEls = document.querySelectorAll('.skill-card, .project-card, .about-grid, .contact-wrap');
+
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+fadeEls.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  fadeObserver.observe(el);
+});
+
+/* ===== CONTACT FORM ===== */
+function handleSubmit(e) {
+  e.preventDefault();
+  const status = document.getElementById('form-status');
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  setTimeout(() => {
+    status.textContent = '✔ Message sent! I\'ll get back to you soon.';
+    e.target.reset();
+    btn.disabled = false;
+    btn.textContent = 'Send Message ↗';
+    setTimeout(() => status.textContent = '', 4000);
+  }, 1200);
+}
+
+/* ===== ACTIVE NAV LINK ON SCROLL ===== */
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+  });
+  navAnchors.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green)' : '';
+  });
+});
