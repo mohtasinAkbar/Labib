@@ -2,7 +2,7 @@
 
 > Personal portfolio website of M. Mohtasin Akbar Labib, a Cybersecurity & Network Engineering student at North South University, Dhaka, Bangladesh.
 
-🌐 **Live Site:** [mohtasinakbar.github.io/portfolioOfMyself](https://mohtasinakbar.github.io/portfolioOfMyself)
+🌐 **Live Site:** https://mohtasinakbar.github.io/Labib/
 
 ---
 
