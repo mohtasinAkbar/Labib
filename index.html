@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M. Mohtasin Akbar Labib | CS Student & Networking Enthusiastic</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -29,7 +30,6 @@
     <ul class="nav-links">
       <li><a href="#about">./about</a></li>
       <li><a href="#skills">./skills</a></li>
-      <li><a href="#projects">./projects</a></li>
       <li><a href="#contact">./contact</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -57,7 +57,7 @@
         <h1 class="hero-name">M. Mohtasin<br><span class="accent">Akbar Labib</span></h1>
         <p class="hero-role"><span class="role-bracket">[</span> CS Student &amp; Networking Enthusiastic <span class="role-bracket">]</span></p>
         <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#skills" class="btn btn-primary">View Skills</a>
           <a href="#contact" class="btn btn-outline">Contact Me</a>
         </div>
       </div>
@@ -78,8 +78,8 @@
       </div>
       <div class="about-grid">
         <div class="about-avatar-wrap">
-          <div class="avatar-hex">
-            <div class="avatar-initials">MAL</div>
+          <div class="avatar-photo-wrap">
+            <img src="https://i.pinimg.com/736x/fa/60/ac/fa60aca0dbc3c98e040d9bd11ecd2ccd.jpg" alt="Labib" class="avatar-photo" />
           </div>
           <div class="avatar-glow" aria-hidden="true"></div>
           <div class="status-badge">
@@ -95,6 +95,13 @@
             <div>
               <span class="club-title">NSU Computer &amp; Engineering Club</span>
               <span class="club-role">General Member · NSUCEC</span>
+            </div>
+          </div>
+          <div class="club-badge">
+            <span class="club-icon">◆</span>
+            <div>
+              <span class="club-title">NSU Marketing &amp; International Business Club</span>
+              <span class="club-role">Former General Member · NSU MIBC</span>
             </div>
           </div>
           <div class="about-stats">
@@ -124,170 +131,119 @@
         <h2 class="section-title">Skills</h2>
         <div class="section-line"></div>
       </div>
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <div class="skill-card-icon">🛡️</div>
-          <h3>Cybersecurity</h3>
-          <ul>
-            <li>Penetration Testing</li>
-            <li>Vulnerability Assessment</li>
-            <li>OSINT &amp; Recon</li>
-            <li>CTF &amp; Exploit Dev</li>
-            <li>Malware Analysis</li>
-          </ul>
-          <div class="skill-bar-group">
-            <div class="skill-bar-item">
-              <span>Pentesting</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+      <div class="skills-slider">
+        <div class="skills-slider-track">
+          <!-- Row 1 - slides left -->
+          <div class="skills-row">
+            <div class="skill-icon-slide">
+              <i class="devicon-c-plain colored"></i>
+              <span>C</span>
             </div>
-            <div class="skill-bar-item">
-              <span>Forensics</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+            <div class="skill-icon-slide">
+              <i class="devicon-python-plain colored"></i>
+              <span>Python</span>
             </div>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-icon">🌐</div>
-          <h3>Networking</h3>
-          <ul>
-            <li>TCP/IP, OSI Model</li>
-            <li>Cisco Routing &amp; Switching</li>
-            <li>Firewall &amp; IDS/IPS</li>
-            <li>VPN &amp; Tunneling</li>
-            <li>Wireshark &amp; tcpdump</li>
-          </ul>
-          <div class="skill-bar-group">
-            <div class="skill-bar-item">
-              <span>Network Design</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+            <div class="skill-icon-slide">
+              <i class="devicon-java-plain colored"></i>
+              <span>Java</span>
             </div>
-            <div class="skill-bar-item">
-              <span>Packet Analysis</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div>
+            <div class="skill-icon-slide">
+              <i class="devicon-msdos-line colored"></i>
+              <span>Microsoft Office</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-autocad-original colored"></i>
+              <span>AutoCAD</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-multisim-original colored"></i>
+              <span>Multisim</span>
             </div>
           </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-icon">💻</div>
-          <h3>Programming</h3>
-          <ul>
-            <li>C / C++</li>
-            <li>Python (Scripting)</li>
-            <li>Java (Learning)</li>
-            <li>Bash / Shell</li>
-            <li>SQL Basics</li>
-          </ul>
-          <div class="skill-bar-group">
-            <div class="skill-bar-item">
-              <span>C / Python</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+          <!-- Duplicate Row 1 for seamless loop -->
+          <div class="skills-row" aria-hidden="true">
+            <div class="skill-icon-slide">
+              <i class="devicon-c-plain colored"></i>
+              <span>C</span>
             </div>
-            <div class="skill-bar-item">
-              <span>Scripting</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div>
+            <div class="skill-icon-slide">
+              <i class="devicon-python-plain colored"></i>
+              <span>Python</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-java-plain colored"></i>
+              <span>Java</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-msdos-line colored"></i>
+              <span>Microsoft Office</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-autocad-original colored"></i>
+              <span>AutoCAD</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-multisim-original colored"></i>
+              <span>Multisim</span>
             </div>
           </div>
         </div>
-
-        <div class="skill-card">
-          <div class="skill-card-icon">🔧</div>
-          <h3>Tools &amp; OS</h3>
-          <ul>
-            <li>Kali Linux / Parrot OS</li>
-            <li>Nmap, Metasploit</li>
-            <li>Burp Suite</li>
-            <li>Nessus / OpenVAS</li>
-            <li>Git &amp; VS Code</li>
-          </ul>
-          <div class="skill-bar-group">
-            <div class="skill-bar-item">
-              <span>Linux</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
+        <div class="skills-slider-track">
+          <!-- Row 2 - slides right (reverse order) -->
+          <div class="skills-row reverse">
+            <div class="skill-icon-slide">
+              <i class="devicon-multisim-original colored"></i>
+              <span>Multisim</span>
             </div>
-            <div class="skill-bar-item">
-              <span>Security Tools</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+            <div class="skill-icon-slide">
+              <i class="devicon-autocad-original colored"></i>
+              <span>AutoCAD</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-msdos-line colored"></i>
+              <span>Microsoft Office</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-java-plain colored"></i>
+              <span>Java</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-python-plain colored"></i>
+              <span>Python</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-c-plain colored"></i>
+              <span>C</span>
+            </div>
+          </div>
+          <!-- Duplicate Row 2 for seamless loop -->
+          <div class="skills-row reverse" aria-hidden="true">
+            <div class="skill-icon-slide">
+              <i class="devicon-multisim-original colored"></i>
+              <span>Multisim</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-autocad-original colored"></i>
+              <span>AutoCAD</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-msdos-line colored"></i>
+              <span>Microsoft Office</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-java-plain colored"></i>
+              <span>Java</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-python-plain colored"></i>
+              <span>Python</span>
+            </div>
+            <div class="skill-icon-slide">
+              <i class="devicon-c-plain colored"></i>
+              <span>C</span>
             </div>
           </div>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">// 03</span>
-        <h2 class="section-title">Projects</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-num">01</span>
-            <div class="project-links">
-              <a href="#" class="proj-link" title="GitHub">&#60;/&#62;</a>
-              <a href="#" class="proj-link" title="Live">↗</a>
-            </div>
-          </div>
-          <h3>Network Intrusion Detection System</h3>
-          <p>A Python-based IDS that monitors network traffic in real-time, flags anomalies using rule-based detection, and logs suspicious activity with detailed reports.</p>
-          <div class="project-tags">
-            <span>Python</span><span>Scapy</span><span>IDS</span><span>Networking</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-num">02</span>
-            <div class="project-links">
-              <a href="#" class="proj-link" title="GitHub">&#60;/&#62;</a>
-              <a href="#" class="proj-link" title="Live">↗</a>
-            </div>
-          </div>
-          <h3>Port Scanner &amp; Vulnerability Mapper</h3>
-          <p>A fast multi-threaded port scanner built in C that fingerprints services, maps open ports, and cross-references known CVEs from a local database.</p>
-          <div class="project-tags">
-            <span>C</span><span>Sockets</span><span>CVE</span><span>Pentesting</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-num">03</span>
-            <div class="project-links">
-              <a href="#" class="proj-link" title="GitHub">&#60;/&#62;</a>
-              <a href="#" class="proj-link" title="Live">↗</a>
-            </div>
-          </div>
-          <h3>Encrypted Chat Application</h3>
-          <p>End-to-end encrypted messaging app using RSA key exchange and AES-256 for message encryption, with a socket-based server-client architecture.</p>
-          <div class="project-tags">
-            <span>Python</span><span>RSA</span><span>AES</span><span>Sockets</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-num">04</span>
-            <div class="project-links">
-              <a href="#" class="proj-link" title="GitHub">&#60;/&#62;</a>
-              <a href="#" class="proj-link" title="Live">↗</a>
-            </div>
-          </div>
-          <h3>Firewall Rule Automation Script</h3>
-          <p>A Bash script that automates iptables/nftables firewall rule deployment based on a YAML config, with rollback support and rule conflict detection.</p>
-          <div class="project-tags">
-            <span>Bash</span><span>iptables</span><span>Linux</span><span>Automation</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -296,7 +252,7 @@
   <section id="contact">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">// 04</span>
+        <span class="section-tag">// 03</span>
         <h2 class="section-title">Contact</h2>
         <div class="section-line"></div>
       </div>
