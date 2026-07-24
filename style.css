@@ -573,7 +573,7 @@ section:not(#hero) {
   letter-spacing: 0.05em;
 }
 
-/* ===== SKILLS (NEW - SLIDING ANIMATION) ===== */
+/* ===== SKILLS (SLIDING ANIMATION) ===== */
 .skills-slider {
   overflow: hidden;
   width: 100%;
@@ -604,15 +604,7 @@ section:not(#hero) {
 .skills-slider-track {
   display: flex;
   width: max-content;
-}
-
-.skills-slider-track:first-child {
   animation: slideLeft 25s linear infinite;
-}
-
-.skills-slider-track:last-child {
-  animation: slideRight 25s linear infinite;
-  margin-top: 2rem;
 }
 
 @keyframes slideLeft {
@@ -620,20 +612,11 @@ section:not(#hero) {
   100% { transform: translateX(-50%); }
 }
 
-@keyframes slideRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
 .skills-row {
   display: flex;
   gap: 2.5rem;
   flex-shrink: 0;
   padding: 1.5rem 1.25rem;
-}
-
-.skills-row.reverse {
-  flex-direction: row-reverse;
 }
 
 .skill-icon-slide {
@@ -647,7 +630,6 @@ section:not(#hero) {
   border: 1px solid var(--border);
   border-radius: 12px;
   transition: all 0.3s;
-  animation: none;
 }
 
 .skill-icon-slide:hover {
@@ -658,6 +640,13 @@ section:not(#hero) {
 
 .skill-icon-slide i {
   font-size: 3rem;
+}
+
+.skill-logo-img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  display: block;
 }
 
 .skill-icon-slide span {
@@ -838,6 +827,7 @@ footer .accent { color: var(--green); }
   /* Skills slider */
   .skill-icon-slide { min-width: 90px; padding: 1rem 0.75rem; }
   .skill-icon-slide i { font-size: 2.4rem; }
+  .skill-logo-img { width: 2.4rem; height: 2.4rem; }
   .skill-icon-slide span { font-size: 0.75rem; }
 
   /* Contact */
