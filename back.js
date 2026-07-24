@@ -154,19 +154,6 @@ navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-/* ===== SKILL BAR ANIMATION (IntersectionObserver) ===== */
-const skillFills = document.querySelectorAll('.skill-fill');
-
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate');
-    }
-  });
-}, { threshold: 0.3 });
-
-skillFills.forEach(fill => skillObserver.observe(fill));
-
 /* ===== SECTION FADE-IN ===== */
 const fadeEls = document.querySelectorAll('.skill-card, .project-card, .about-grid, .contact-wrap');
 
