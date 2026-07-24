@@ -1,3 +1,54 @@
+/* ===== PRELOADER: HELLO IN DIFFERENT LANGUAGES ===== */
+(function () {
+  const words = [
+    'Hello',        // English
+    'Bonjour',      // French
+    'Hola',         // Spanish
+    'হ্যালো',        // Bengali
+    'Ciao',         // Italian
+    'こんにちは',      // Japanese
+    'Hallo',        // German
+    '안녕하세요',      // Korean
+    'Привет',       // Russian
+    'مرحبا',        // Arabic
+    'Olá',          // Portuguese
+    '你好',          // Chinese
+    'Hello'         // back to English before reveal
+  ];
+
+  const preloader = document.getElementById('preloader');
+  const wordEl = document.getElementById('preloader-word');
+  if (!preloader || !wordEl) return;
+
+  document.body.classList.add('preloader-active');
+
+  let i = 0;
+  const stepMs = 180;
+
+  const interval = setInterval(() => {
+    i++;
+    if (i >= words.length) {
+      clearInterval(interval);
+      setTimeout(hidePreloader, 400);
+      return;
+    }
+    wordEl.textContent = words[i];
+  }, stepMs);
+
+  function hidePreloader() {
+    preloader.classList.add('preloader-hidden');
+    document.body.classList.remove('preloader-active');
+    setTimeout(() => preloader.remove(), 700);
+  }
+
+  // Safety net: never let the preloader block the site
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      if (document.getElementById('preloader')) hidePreloader();
+    }, words.length * stepMs + 1500);
+  });
+})();
+
 /* ===== MATRIX RAIN ===== */
 const canvas = document.getElementById('matrix-canvas');
 const ctx = canvas.getContext('2d');
