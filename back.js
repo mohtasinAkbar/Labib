@@ -62,10 +62,19 @@ function initMatrix() {
   drops = Array(cols).fill(1);
 }
 
+function getMatrixColors() {
+  const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+  if (theme === 'light') {
+    return { fade: 'rgba(244,247,244,0.14)', glyph: '#00a855' };
+  }
+  return { fade: 'rgba(10,12,15,0.05)', glyph: '#00ff88' };
+}
+
 function drawMatrix() {
-  ctx.fillStyle = 'rgba(10,12,15,0.05)';
+  const colors = getMatrixColors();
+  ctx.fillStyle = colors.fade;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#00ff88';
+  ctx.fillStyle = colors.glyph;
   ctx.font = '14px Share Tech Mono';
 
   const chars = '01アイウエオカキクケコセキュリティネットワーク';
@@ -203,3 +212,41 @@ window.addEventListener('scroll', () => {
     a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green)' : '';
   });
 });
+
+/* ===== THEME ===== */
+(function () {
+  const STORAGE_KEY = 'theme';
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(STORAGE_KEY, theme);
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+      toggle.setAttribute(
+        'aria-label',
+        theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+      );
+    }
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
+  }
+
+  function initTheme() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === 'light' || stored === 'dark') {
+      setTheme(stored);
+      return;
+    }
+    const system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    setTheme(system);
+  }
+
+  initTheme();
+
+  const toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+})();
