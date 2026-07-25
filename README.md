@@ -22,67 +22,6 @@ This is my personal portfolio website showcasing my skills, projects, and backgr
 | **Projects** | Hands-on security & networking projects |
 | **Contact** | Email, GitHub, LinkedIn, Facebook |
 
----
-
-## 🧠 Skills Highlighted
-
-- **Cybersecurity** — Penetration Testing, Vulnerability Assessment, OSINT, CTF, Malware Analysis
-- **Networking** — TCP/IP, Cisco Routing & Switching, Firewalls, Wireshark, VPN
-- **Programming** — C, Python, Java (learning), Bash
-- **Tools & OS** — Kali Linux, Nmap, Metasploit, Burp Suite, Nessus, Git, VS Code
-
----
-
-## 🏛️ Affiliations
-
-- 🎓 **North South University** — CSE Student, Dhaka, Bangladesh
-- ⬡ **NSUCEC** — General Member, NSU Computer & Engineering Club
-
----
-
-## 🛠️ Built With
-
-- HTML5
-- CSS3 (custom properties, animations, responsive design)
-- Vanilla JavaScript (no frameworks, no build tools)
-- Google Fonts — [Share Tech Mono](https://fonts.google.com/specimen/Share+Tech+Mono) + [Syne](https://fonts.google.com/specimen/Syne)
-
----
-
-## ✨ Features
-
-- Matrix rain canvas background
-- Animated typing terminal on hero section
-- Scroll-triggered skill bar animations
-- IntersectionObserver fade-in animations
-- Sticky navbar with active section highlighting
-- Mobile responsive with hamburger menu
-- Simulated contact form
-
----
-
-## 📁 File Structure
-
-```
-portfolioOfMyself/
-├── index.html       # Main HTML + JavaScript
-└── style.css        # All styles and responsive rules
-```
-
----
-
-## 🚀 How to Run Locally
-
-Just clone the repo and open `index.html` in your browser — no setup needed.
-
-```bash
-git clone https://github.com/mohtasinAkbar/portfolioOfMyself.git
-cd portfolioOfMyself
-# Open index.html in your browser
-```
-
----
-
 ## 📬 Contact
 
 | Platform | Link |
