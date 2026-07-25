@@ -18,8 +18,7 @@ This is my personal portfolio website showcasing my skills, projects, and backgr
 |--------|-------------|
 | **Hero** | Animated terminal intro with typed commands |
 | **About** | Background, university, club membership |
-| **Skills** | Cybersecurity, Networking, Programming, Tools |
-| **Projects** | Hands-on security & networking projects |
+| **Skills** | C, Python, Java, Microsoft Office, Autocad 2026, Multisim |                      
 | **Contact** | Email, GitHub, LinkedIn, Facebook |
 
 ## 📬 Contact
